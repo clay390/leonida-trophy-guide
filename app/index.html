@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI · all 55 trophies, offline tracker</title>
+<meta name="description" content="Unofficial fan guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: cited guides, a roadmap to the platinum, missable flags, filters and a spoiler setting. Works offline.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">L</span>
+    <div>
+      <h1>Leonida Trophy Guide</h1>
+      <p class="sub">Grand Theft Auto VI · PlayStation 5 · 55 trophies · offline</p>
+      <p class="stats" id="stats-line"></p>
+    </div>
+  </div>
+  <div class="progress" aria-label="Progress to platinum">
+    <div class="progress-line"><strong id="progress-count">0/55</strong><span id="progress-pct">0% to platinum</span></div>
+    <div class="bar"><span id="progress-fill"></span></div>
+    <div class="grades" id="grade-counts"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button id="tab-guide" class="tab active" type="button">Guide &amp; tracker</button>
+  <button id="tab-roadmap" class="tab" type="button">Roadmap to platinum</button>
+  <button id="tab-missables" class="tab" type="button">Missables</button>
+  <button id="tab-about" class="tab" type="button">About &amp; sources</button>
+</nav>
+
+<div class="stage-strip" id="stage-strip" aria-label="Roadmap stages"></div>
+
+<section id="view-guide">
+  <div class="toolbar">
+    <div class="filters" id="kind-filters" role="group" aria-label="Filter by kind"></div>
+    <div class="search-row">
+      <input id="search" type="search" placeholder="Search trophy, mission, place…" aria-label="Search trophies">
+      <label class="grade-label">Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="grade-label">Status
+        <select id="status-filter">
+          <option value="all">Earned + missing</option>
+          <option value="earned">Earned only</option>
+          <option value="missing">Missing only</option>
+        </select>
+      </label>
+      <label class="grade-label">Sort
+        <select id="sort-filter">
+          <option value="roadmap">Roadmap order</option>
+          <option value="name">Name A–Z</option>
+          <option value="grade">Grade</option>
+        </select>
+      </label>
+      <label class="check"><input id="spoiler" type="checkbox"> Spoiler-free story</label>
+      <button id="export" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import" type="file" accept="application/json"></label>
+      <button id="reset" type="button" class="ghost">Reset</button>
+    </div>
+    <p class="showing" id="showing"></p>
+  </div>
+
+  <div class="columns">
+    <main class="list-col">
+      <p class="missable-banner" id="missable-banner">⚠ Only 1 trophy is possibly missable: <strong>Positive Mental Attitude</strong> — do Lucia’s Chapter 1 balcony meditation before Chapter 1 ends.</p>
+      <div id="empty" class="empty" hidden></div>
+      <ol id="rows" class="rows"></ol>
+    </main>
+    <aside class="detail-col" id="detail" aria-live="polite"></aside>
+  </div>
+</section>
+
+<section id="view-roadmap" hidden>
+  <div class="roadmap-intro">
+    <h2>Roadmap to the platinum</h2>
+    <p>About <strong>200 hours</strong>, difficulty <strong>4/10</strong>, one playthrough, no online trophies — PowerPyx. The story takes 60–80 hours; the 100% checklist takes about 100 more. There is <strong>no mission replay</strong>, so keep a <strong>manual save at the start of every chapter</strong> and one before the final mission. Guides report that <strong>cheats disable trophies and saving</strong>, so leave them off for the whole run.</p>
+  </div>
+  <div id="phases"></div>
+  <div class="checklist-box">
+    <h3>The 100% checklist — what A Long Road actually needs</h3>
+    <p>The checklist is closer to 60% true completion, per PowerPyx — you do not need everything. The thresholds are: <strong>200 of 277</strong> base-model vehicles scanned · <strong>100 of 255</strong> animals studied through the binoculars · <strong>70 of 80</strong> challenges · <strong>300</strong> stunts · <strong>15</strong> meditation spots on the checklist (the trophy counts 18) · <strong>50 of 66</strong> weapons. Earlier progress counts, and nothing on the checklist is missable.</p>
+  </div>
+</section>
+
+<section id="view-missables" hidden>
+  <div class="roadmap-intro">
+    <h2>Missable watch list</h2>
+    <p>PowerPyx flags only <strong>one</strong> trophy as possibly missable. Seven more have triggers no guide has pinned down yet, so they sit on this watch list until the guides do — they are not known to be missable, but they are the ones to check again after launch. Everything else in the list cannot be missed: story trophies pop when you finish their mission, and free-roam after the story keeps every side trophy reachable. There is <strong>no mission replay</strong>, so keep a <strong>manual save at the start of every chapter</strong> and one before the final mission.</p>
+  </div>
+  <div id="missable-list"></div>
+</section>
+
+<section id="view-about" hidden>
+  <h2>About &amp; sources</h2>
+  <p>An unofficial fan guide, written for this entry in our own words. The trophy names and descriptions are shown as PlayStation publishes them; every guide names where its facts come from, beside the trophy. No Rockstar Games logo, artwork or game screenshot is used — the look is our own.</p>
+  <h3>Sources</h3>
+  <ol id="source-list" class="sources"></ol>
+  <h3>How the list was checked</h3>
+  <p>The 55 names, descriptions and grades were taken from the official list as published on PlayStation Network (Exophase / PSNProfiles, 18 November 2026): 1 platinum, 2 gold, 6 silver, 46 bronze; 27 visible, 28 hidden until earned. Counts, the roadmap and the missable flag come from PowerPyx, cross-checked against GTABase, OutputLag, CryptoGames and GTA-Zone. Where the guides disagree — the meditation count is 18 spots for the trophy and 15 on the 100% checklist — this guide reports both numbers instead of picking one. Seven trophies are marked <em>unconfirmed</em>: the guides have not pinned down their exact trigger yet, so their guides say what the description plainly reads and say so.</p>
+  <h3>Your progress</h3>
+  <p>Progress is saved in this browser only (localStorage). Nothing leaves your machine: the guide makes no network request at all. Export downloads your ticks as a file; import reads that file back.</p>
+  <p class="fine">Leonida Trophy Guide — unofficial fan guide · progress stays in your browser · 55 trophies · retrieved 19 November 2026</p>
+</section>
+
+<footer>
+  <p>Leonida Trophy Guide — unofficial fan guide · progress stays in your browser · 55 trophies</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
